@@ -4,7 +4,8 @@
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Sanke and Ladder Problem");
+            Console.WriteLine("Welcome to Snake and Ladder Problem");
+            SnakeLadderGame.SinglePlayer();
         }
     }
 }
