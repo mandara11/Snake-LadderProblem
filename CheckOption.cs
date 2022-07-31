@@ -42,6 +42,7 @@ namespace SnakeAndLadder
                         break;
                 }
             }
+            Console.WriteLine("This position is " + this.position);
         }
     }
 }
