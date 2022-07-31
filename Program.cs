@@ -5,8 +5,10 @@
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Snake and Ladder Problem");
-            SnakeLadderGame.SinglePlayer(); //UC1
-            Player.CheckDieRoll(); //UC2
+            CheckOption checkOption = new CheckOption();
+            //SnakeLadderGame.SinglePlayer(); //UC1
+            //Player.CheckDieRoll(); //UC2
+            checkOption.Game();   //UC3
         }
     }
 }
