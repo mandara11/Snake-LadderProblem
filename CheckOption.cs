@@ -22,19 +22,25 @@ namespace SnakeAndLadder
         }
         public void Game()
         {
-            Random random = new Random();
-            int option = random.Next(0, 3);
-            switch (option)
+            while (this.position < 100)
             {
-                case NO_PLAY:
-                    this.position = 0;
-                    break;
-                case SNAKE:
-                    this.position -= this.SnakeorLadder();
-                    break;
-                case LADDER:
-                    this.position += this.SnakeorLadder();
-                    break;
+                Random random = new Random();
+                int option = random.Next(0, 3);
+                switch (option)
+                {
+                    case NO_PLAY:
+                        this.position = 0;
+                        break;
+                    case SNAKE:
+                        this.position -= this.SnakeorLadder();
+                        break;
+                    case LADDER:
+                        this.position += this.SnakeorLadder();
+                        break;
+                    default:
+                        Console.WriteLine("Wrong choice");
+                        break;
+                }
             }
         }
     }
