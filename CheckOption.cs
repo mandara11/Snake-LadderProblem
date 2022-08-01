@@ -10,6 +10,7 @@ namespace SnakeAndLadder
     {
         const int NO_PLAY = 0, SNAKE = 1, LADDER = 2;
         int position = 0;
+        int count;
 
         public int SnakeorLadder()
         {
@@ -29,20 +30,29 @@ namespace SnakeAndLadder
                 switch (option)
                 {
                     case NO_PLAY:
-                        this.position = 0;
+                        this.position += 0;
                         break;
                     case SNAKE:
                         this.position -= this.SnakeorLadder();
+                        if (this.position < 0)
+                        {
+                            this.position = 0;
+                        }
                         break;
                     case LADDER:
-                        this.position += this.SnakeorLadder();
-                        break;
-                    default:
-                        Console.WriteLine("Wrong choice");
+                        int roll = this.SnakeorLadder();
+                        this.position += roll;
+                        if (this.position > 100)
+                        {
+                            this.position -= roll;
+                        }
                         break;
                 }
+                Console.WriteLine("The position after every die roll is : " + this.position);
+                count++;
             }
-            Console.WriteLine("This position is " + this.position);
+            Console.WriteLine("The number of times the dice played : " + count++);
+
         }
     }
 }
